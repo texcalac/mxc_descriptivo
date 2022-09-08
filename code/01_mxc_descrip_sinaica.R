@@ -213,7 +213,6 @@ ggplot(data = mxc_l, aes(x = factor(mes), y = pm25)) +
         strip.text = element_text(size = 18), 
         plot.background = element_rect(fill = "white", color = "black"))
 
-ggsave("~/Desktop/g_mes_horarios.jpg", width = 1920, height = 1080, units = 'px', dpi = 128)
 ggsave("./output/g_mes_horarios.jpg", width = 1920, height = 1080, units = 'px', dpi = 128)
 
 # rm(mxc2018, mxc2019)
@@ -238,7 +237,7 @@ dias_num <- yday(seq(as.Date("2018-01-01"), length = 24, by = "1 month"))
 dias_lab <- month(seq(as.Date("2018-01-01"), length = 24,by = "1 month"), label = TRUE)
 
 ggplot(data = mxc_l_24h, aes(x = dia_year, y = pm25)) + 
-  geom_rect(aes(xmin = 1, xmax = 365, ymin = 41, ymax = 100), fill = "gray80", alpha = 0.05) + 
+  geom_rect(aes(xmin = 1, xmax = 365, ymin = 41, ymax = 100), fill = "gray90", alpha = 0.05) + 
   geom_line(colour = "dodgerblue4", size = 0.3) + 
   labs(x = "", 
        y = expression(paste(PM[2.5], '  (', mu, '/', m^3, ')', sep = ''))) + 
@@ -254,7 +253,6 @@ ggplot(data = mxc_l_24h, aes(x = dia_year, y = pm25)) +
         strip.text = element_text(size = 18), 
         plot.background = element_rect(fill = "white", color = "black"))
 
-ggsave("~/Desktop/g_mes_diarios.jpg", width = 1920, height = 1080, units = 'px', dpi = 128)
 ggsave("./output/g_mes_diarios.jpg", width = 1920, height = 1080, units = 'px', dpi = 128)
 
 
